@@ -16,7 +16,7 @@ module.exports = merge(common('development'), {
     inline: true,
     historyApiFallback: true,
     overlay: true,
-    open: true
+    open: false 
   },
   module: {
     rules: [

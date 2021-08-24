@@ -25,9 +25,8 @@
     "clean": "rimraf dist",
     "storybook": "start-storybook -p 6006",
     "build:storybook": "build-storybook",
-    "electron-dev": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:8080 && electron .\"",
-    "olga": "webpack --config webpack.prod.js && npm run electron-dev", 
-    "mock-server": "node mock-server/server.js"
+    "mock-server": "node mock-server/server.js",
+    "electron-dev": "concurrently \"npm run mock-server\" \"npm run start:dev\" \"wait-on http://localhost:9000 && electron .\""
   },
   "devDependencies": {
     "@storybook/addon-actions": "^6.2.9",
@@ -82,6 +81,7 @@
     "tslib": "^2.2.0",
     "typescript": "^4.3.2",
     "url-loader": "^4.1.1",
+    "wait-on": "^6.0.0",
     "webpack": "^5.38.1",
     "webpack-bundle-analyzer": "^4.4.2",
     "webpack-cli": "^4.7.2",
